@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontakt – QR-Code-Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <a class="back" href="../index.html">← Übersicht</a>
+    <h1>Kontakt</h1>
+
+    <form>
+      <div class="row">
+        <label>Vorname <input id="first" autocomplete="given-name" autofocus></label>
+        <label>Nachname <input id="last" autocomplete="family-name"></label>
+      </div>
+      <label>Firma <input id="org" autocomplete="organization"></label>
+      <div class="row">
+        <label>Telefon <input id="phone" type="tel" autocomplete="tel"></label>
+        <label>E-Mail <input id="email" type="email" autocomplete="email"></label>
+      </div>
+      <label>Webseite <input id="website" type="url" placeholder="https://"></label>
+      <label>Straße <input id="street" autocomplete="street-address"></label>
+      <div class="row">
+        <label>PLZ <input id="zip" autocomplete="postal-code"></label>
+        <label>Ort <input id="city" autocomplete="address-level2"></label>
+        <label>Land <input id="country" autocomplete="country-name"></label>
+      </div>
+
+      <details>
+        <summary>Darstellung</summary>
+        <div class="row">
+          <label>Größe
+            <select id="size">
+              <option value="256">256 px</option>
+              <option value="512" selected>512 px</option>
+              <option value="1024">1024 px</option>
+              <option value="2048">2048 px</option>
+            </select>
+          </label>
+          <label>Fehlerkorrektur
+            <select id="ecc">
+              <option value="L">Niedrig (7 %)</option>
+              <option value="M" selected>Mittel (15 %)</option>
+              <option value="Q">Hoch (25 %)</option>
+              <option value="H">Sehr hoch (30 %)</option>
+            </select>
+          </label>
+          <label>Vordergrund <input type="color" id="fg" value="#000000"></label>
+          <label>Hintergrund <input type="color" id="bg" value="#ffffff"></label>
+        </div>
+      </details>
+    </form>
+
+    <section id="result" hidden>
+      <canvas id="qr"></canvas>
+      <div class="actions">
+        <button id="download-png">PNG herunterladen</button>
+        <button id="download-svg">SVG herunterladen</button>
+        <button id="copy">Kopieren</button>
+      </div>
+    </section>
+    <p id="status" role="status"></p>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
