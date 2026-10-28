@@ -8,7 +8,7 @@ Die Startseite (`index.html`) führt zu vier „Activities“, eine pro QR-Code-
 
 | Activity | Ordner | Was im QR-Code steckt |
 | --- | --- | --- |
-| **Text & Link** | `text/` | Beliebiger Text oder eine URL. Beim Scannen wird der Link geöffnet bzw. der Text angezeigt. |
+| **Text & Link** | `text/` | Beliebiger Text oder eine URL. Beim Scannen wird der Link geöffnet bzw. der Text angezeigt. Ein Button fügt den Inhalt direkt aus der Zwischenablage ein. |
 | **WLAN** | `wlan/` | Netzwerkname, Passwort, Verschlüsselung (WPA/WEP/offen) und ob das Netz versteckt ist. Smartphones verbinden sich nach dem Scannen direkt. |
 | **Kontakt** | `kontakt/` | Eine digitale Visitenkarte (vCard 3.0) mit Name, Firma, Telefon, E-Mail, Webseite und Adresse. Nur ausgefüllte Felder werden übernommen. |
 | **E-Mail** | `email/` | Ein `mailto:`-Link mit Empfänger, Betreff und Nachricht. Beim Scannen öffnet sich das Mailprogramm mit vorausgefüllter E-Mail. |
@@ -33,6 +33,7 @@ In jeder Activity gilt:
 ```
 index.html          Startseite mit Links zu den Activities
 style.css           Design der Startseite
+favicon.svg         Icon im Browser-Tab (wird von allen Seiten genutzt)
 text/               Activity „Text & Link“
   index.html
   scripts.js

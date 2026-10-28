@@ -78,6 +78,15 @@ $('download-svg').addEventListener('click', () => {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 });
 
+$('paste').addEventListener('click', async () => {
+  try {
+    $('content').value = await navigator.clipboard.readText();
+    render();
+  } catch {
+    status.textContent = 'Kein Zugriff auf die Zwischenablage – bitte mit Strg+V einfügen.';
+  }
+});
+
 $('copy').addEventListener('click', () => {
   canvas.toBlob(async (blob) => {
     try {
