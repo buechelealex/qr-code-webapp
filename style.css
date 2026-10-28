@@ -29,35 +29,25 @@ body {
 }
 
 main {
-  max-width: 720px;
+  max-width: 400px;
   margin: 0 auto;
   padding: 40px 16px;
 }
 
 h1 { margin: 0 0 8px; }
 
-.intro { color: var(--muted); margin: 0 0 28px; }
+p { color: var(--muted); margin: 0 0 24px; }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 14px;
-}
+nav { display: grid; gap: 10px; }
 
-.card {
-  display: grid;
-  gap: 4px;
-  padding: 18px;
+nav a {
+  padding: 14px 16px;
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 10px;
   color: var(--text);
   text-decoration: none;
-  transition: border-color 0.15s, transform 0.15s;
+  font-weight: 600;
 }
 
-.card:hover { border-color: var(--accent); transform: translateY(-2px); }
-
-.card .icon { font-size: 28px; }
-
-.card span:last-child { color: var(--muted); font-size: 14px; }
+nav a:hover { border-color: var(--accent); color: var(--accent); }
